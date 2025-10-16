@@ -58,7 +58,7 @@ pipeline {
           docker run -d \
             --name ${JMETER_CONTAINER_NAME} \
             --memory=2g --shm-size=512m \
-            ${JMETER_IMAGE} sleep 300
+            ${JMETER_IMAGE} sleep 600
 
           docker exec ${JMETER_CONTAINER_NAME} mkdir -p /work/jmeter /work/out
           docker cp jmeter/. ${JMETER_CONTAINER_NAME}:/work/jmeter/
