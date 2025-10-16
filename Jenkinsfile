@@ -22,7 +22,7 @@ pipeline {
     REPORTS_DIR = 'reports'
     JMETER_IMAGE = 'jmeter-prom:latest'
     JMETER_CONTAINER_NAME = 'jmeter-run'
-    BRANCH_NAME = 'master'
+    BRANCH_NAME = 'main'
 
     // 🟦 Configuración de la API externa httpbin.org
     BASE_URL = 'https://httpbin.org'
