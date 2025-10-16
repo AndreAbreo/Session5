@@ -57,7 +57,7 @@ pipeline {
 
           docker run -d \
             --name ${JMETER_CONTAINER_NAME} \
-            --memory=1g --shm-size=256m \
+            --memory=2g --shm-size=512m \
             ${JMETER_IMAGE} sleep 300
 
           docker exec ${JMETER_CONTAINER_NAME} mkdir -p /work/jmeter /work/out
@@ -65,7 +65,7 @@ pipeline {
 
           # 🟦 Ejecuta JMeter usando propiedades pasadas por -J (configuración basada en propiedades)
           echo "=== Running JMeter test plan with properties ==="
-          timeout 180 docker exec ${JMETER_CONTAINER_NAME} jmeter -n \
+          timeout 300 docker exec ${JMETER_CONTAINER_NAME} jmeter -n \
             -t /work/jmeter/test-plan.jmx \
             -l /work/out/results.jtl \
             -e -o /work/out/jmeter-report \
