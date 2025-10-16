@@ -26,9 +26,9 @@ pipeline {
 
     // 🟦 Configuración de la API externa httpbin.org
     BASE_URL = 'https://httpbin.org'
-    THREADS = '50'
-    RAMPUP = '120'
-    DURATION = '180'
+    THREADS = '10'
+    RAMPUP = '30'
+    DURATION = '60'
   }
 
   stages {
@@ -57,7 +57,7 @@ pipeline {
 
           docker run -d \
             --name ${JMETER_CONTAINER_NAME} \
-            --memory=2g --shm-size=512m \
+            --memory=3g --shm-size=512m \
             ${JMETER_IMAGE} sleep 600
 
           docker exec ${JMETER_CONTAINER_NAME} mkdir -p /work/jmeter /work/out
