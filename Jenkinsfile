@@ -2,10 +2,9 @@
  * ✅ Performance Testing Pipeline – Session 5 Adaptado
  * 
  * Cambios principales:
- * 🟦 1. Se elimina la espera del AUT (ya no hay app local).
- * 🟦 2. El test usa una API externa (https://httpbin.org).
- * 🟦 3. Se agregan propiedades (-Jthreads, -Jrampup, -Jduration, -Jbase_url)
- * 🟦 4. Se invoca el script check-thresholds.sh para validar P95/ErrorRate.
+ * 🟦 1. El test usa una API externa (https://httpbin.org).
+ * 🟦 2. Se agregan propiedades (-Jthreads, -Jrampup, -Jduration, -Jbase_url)
+ * 🟦 3. Se invoca el script check-thresholds.sh para validar P95/ErrorRate.
  */
 
 pipeline {
